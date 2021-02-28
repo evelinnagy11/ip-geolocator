@@ -118,6 +118,20 @@
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.9.1</version>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.9.1</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.wagon</groupId>
+						<artifactId>wagon-ssh</artifactId>
+						<version>3.4.2</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
 		</plugins>
 	</build>
 	<reporting>
@@ -149,8 +163,14 @@
 					<configLocation>checkstyle.xml</configLocation>
 				</configuration>
 			</plugin>
-			
 		</plugins>
 	</reporting>
+
+	<distributionManagement>
+		<site>
+			<id>shrek</id>
+			<url>scp://evelinnagy99@shrek.unideb.hu:2222/home/evelinnagy99/public_html/${project.artifactId}</url>
+		</site>
+	</distributionManagement>
 
 </project>
