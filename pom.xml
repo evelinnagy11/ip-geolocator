@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>hu.unideb.inf</groupId>
 	<artifactId>ip-geolocator</artifactId>
-	<version>1.0</version>
+	<version>2.0</version>
 	<description>Java class library for obtaining geolocation information of an IP address.</description>
 	<developers>
 		<developer>
@@ -162,6 +162,21 @@
 				<configuration>
 					<configLocation>checkstyle.xml</configLocation>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.8.1</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>dependency-updates-report</report>
+							<report>plugin-updates-report</report>
+							<report>property-updates-report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
 			</plugin>
 		</plugins>
 	</reporting>
